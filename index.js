@@ -58,6 +58,6 @@ app.post('https://quickpolls-api.onrender.com/submitPoll', async (req, res) => {
     }
   });
 
-app.listen(8080, () => {
-    console.log("Server is running on port 8080");
+app.listen(10000, () => {
+    console.log("Server is running on port 10000");
 });
