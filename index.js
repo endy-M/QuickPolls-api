@@ -14,7 +14,7 @@ app.use(cors());
 
 mongoose.connect(apiKey);
 
-app.get("https://quickpolls-api.onrender.com/getPolls/:id", (req, res) => {
+app.get("/getPolls/:id", (req, res) => {
     let id = req.params.id;
     PollModel.findOne({ pollid: id })
         .then((result) => {
@@ -26,14 +26,14 @@ app.get("https://quickpolls-api.onrender.com/getPolls/:id", (req, res) => {
         });
 });
 
-app.post("https://quickpolls-api.onrender.com/createPoll", async (req, res) => {
+app.post("/createPoll", async (req, res) => {
     const poll = req.body;
     const newPoll = new PollModel(poll)
     await newPoll.save();
     res.json(poll);
 })
 
-app.post('https://quickpolls-api.onrender.com/submitPoll', async (req, res) => {
+app.post('/submitPoll', async (req, res) => {
     const { pollid, selectedOptions } = req.body;
   
     try {
