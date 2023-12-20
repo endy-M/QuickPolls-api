@@ -3,11 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 const PollModel = require("./models/Polls");
 
-const PORT = process.env.PORT || 443;
 
 const dotenv = require('dotenv');
 dotenv.config();
 const apiKey = process.env.REACT_APP_API_KEY;
+const PORT = process.env.PORT || 443;
 
 const cors = require("cors");
 
